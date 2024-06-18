@@ -1,4 +1,5 @@
 <h1>Estudiantes</h1>
+<a href="/">Inicio</a>
 <table>
     <thead>
         <tr>
@@ -9,17 +10,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>230945</td>
-            <td>Antonio Asael</td>
-            <td>Cisneros</td>
-            <td>Gonzalez</td>
-        </tr>
-        <tr>
-            <td>234985</td>
-            <td>Jamila Itzel</td>
-            <td>Cisneros</td>
-            <td>Gonzalez</td>
-        </tr>
+       {% for estudiante in data %}
+       <tr>
+        <td>{{estudiante["matricula"]}}</td>
+        <td>{{estudiante["nombre"]}}</td>
+        <td>{{estudiante["apellido_paterno"]}}</td>
+        <td>{{estudiante["apellido_materno"]}}</td>
+       </tr>
+
+       {% endfor %}
     </tbody>
 </table>
