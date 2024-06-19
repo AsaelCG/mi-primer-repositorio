@@ -35,8 +35,9 @@ def materias ():
     with open ('db/materias.txt', 'r') as f:
         lines = f.read().splitlines()
         for line in lines:
-            materias.append(materias[0], materias[1])
-    return render_template ('materias.html', materias = materias)
+            cortadoras = line.split('|')
+            materias.append({'nombre' : cortadoras[0], 'calificacion' : cortadoras[1]})
+    return render_template ('materias.html', data = materias)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8888)

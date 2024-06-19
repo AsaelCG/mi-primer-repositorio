@@ -1,6 +1,6 @@
 Bases de datos|8
-Analisis y Diseño de Algoritmos|10
-Programación Orientada a Objetos|9
+Analisis y Disenio de Algoritmos|10
+Programacion Orientada a Objetos|9
 Programacion Avanzada|9
 Fundamentos de Redes Computacionales|10
-Hacking Ético|10
+Hacking Etico|10

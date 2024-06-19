@@ -9,12 +9,11 @@
         </tr>
     </thead>
     <tbody>
-       {% for materia in materias %}
+       {% for materia in data %}
        <tr>
         <td>{{materia["nombre"]}}</td>
         <td>{{materia["calificacion"]}}</td>
        </tr>
-
        {% endfor %}
     </tbody>
 </table>
