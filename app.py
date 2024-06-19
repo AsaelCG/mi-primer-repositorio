@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from entidades.estudiante import Estudiante
+from entidades.profesor import Profesor
 app = Flask(__name__)
 
 @app.route ("/")
@@ -17,14 +18,24 @@ def estudiantes():
             estudiantes.append(estudiante1)
     return render_template('estudiantes.html', data=estudiantes)
 
+@app.route("/profesores")
+def profesores():
+    profesores=[]
+    with open ('db/profesores.txt', 'r') as f:
+        lines = f.read().splitlines()
+        for line in lines:
+            id, nombre, ap_paterno, ap_materno = line.split('|')
+            profresor1= Profesor(id, nombre, ap_paterno, ap_materno)
+            profesores.append(profresor1)
+    return render_template('profesores.html', data=profesores)
+
 @app.route("/materias")
 def materias ():
-    materias = [
-        {"nombre":"Analisis y Diseños de Algoritmos", "calificacion": 10},
-        {"nombre":"Programación Orientada a Objetos", "calificacion": 9},
-        {"nombre":"Bases de datos", "calificacion": 7},
-        {"nombre":"Programación Avanzada", "calificacion": 10}
-    ]
+    materias = []
+    with open ('db/materias.txt', 'r') as f:
+        lines = f.read().splitlines()
+        for line in lines:
+            materias.append(materias[0], materias[1])
     return render_template ('materias.html', materias = materias)
 
 if __name__ == '__main__':
